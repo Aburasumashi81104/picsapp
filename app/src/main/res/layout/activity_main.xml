@@ -5,10 +5,36 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
     <Button
-        android:id="@+id/button"
-        android:text="This is Button"
+        android:id="@+id/Theme"
+        android:text="THEME"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/Gallery"
+        android:text="Gallery"
         android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/Joint"/>
+
+    <Button
+        android:id="@+id/Joint"
+        android:text="Joint"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/Photo" />
+
+    <Button
+        android:id="@+id/Photo"
+        android:text="Photo"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
