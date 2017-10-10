@@ -7,7 +7,7 @@
 
 
     <Button
-        android:id="@+id/Theme"
+        android:id="@+id/theme"
         android:text="THEME"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -15,23 +15,23 @@
         android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/Gallery"
+        android:id="@+id/gallery"
         android:text="Gallery"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/Joint"/>
+        android:layout_above="@+id/joint"/>
 
     <Button
-        android:id="@+id/Joint"
+        android:id="@+id/joint"
         android:text="Joint"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/Photo" />
+        android:layout_above="@+id/photo" />
 
     <Button
-        android:id="@+id/Photo"
+        android:id="@+id/photo"
         android:text="Photo"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
