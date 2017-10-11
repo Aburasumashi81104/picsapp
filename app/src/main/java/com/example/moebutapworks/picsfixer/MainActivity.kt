@@ -14,19 +14,29 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        Log.d(TAG, "Slelect Theme!!")
+        val theme: Button = findViewById(R.id.theme) as Button
+        theme.setOnClickListener { view ->
+            Log.d(TAG, "Click!")
+        }
+
+        Log.d(TAG, "This is a first log!!")
+        val gallery: Button = findViewById(R.id.gallery) as Button
+        gallery.setOnClickListener { view ->
+            Log.d(TAG, "Click!")
+        }
+
+        Log.d(TAG, "This is a second log!!")
+        val joint: Button = findViewById(R.id.joint) as Button
+        joint.setOnClickListener { view ->
+            Log.d(TAG, "Click!")
+        }
+
         Log.d(TAG, "This is a first log!")
-        val button: Button = findViewById(R.id.gallery) as Button
-        button.setOnClickListener { view ->
+        val photo: Button = findViewById(R.id.photo) as Button
+        photo.setOnClickListener { view ->
             Log.d(TAG, "Click!")
         }
-
-        Log.d(TAG, "This is a second log!")
-        val button2: Button = findViewById(R.id.joint) as Button
-        button.setOnClickListener { view ->
-            Log.d(TAG, "Click!")
-        }
-
-
 
     }
 
