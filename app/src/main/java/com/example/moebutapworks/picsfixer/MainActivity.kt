@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         Log.d(TAG, "This is a first log!")
-        val photo: Button = findViewById(R.id.photo) as Button
+        val photo: Button = findViewById(R.id.photobutton) as Button
         photo.setOnClickListener { view ->
             Log.d(TAG, "photo button is Clicked!")
         }
