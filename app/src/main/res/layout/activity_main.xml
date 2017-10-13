@@ -32,7 +32,7 @@
         android:layout_above="@+id/photobutton"
         android:layout_marginTop="25dp"/>
 
-    <ImageButton
+    <Button
         android:id="@+id/photobutton"
 
         android:layout_centerHorizontal="true"
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:layout_marginBottom="40dp"
-        app:srcCompat="@drawable/photoicon2"/>
+        android:background="@drawable/photoicon2"/>
 
 
 </RelativeLayout>
