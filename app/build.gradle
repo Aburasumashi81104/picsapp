@@ -1,16 +1,30 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-
+apply plugin: 'me.tatarka.retrolambda'
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
     defaultConfig {
         applicationId "com.example.moebutapworks.picsfixer"
         minSdkVersion 21
-        targetSdkVersion 26
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "CREATIVE_SDK_CLIENT_ID", "${CREATIVE_SDK_CLIENT_ID}")
+        buildConfigField("String", "CREATIVE_SDK_CLIENT_SECRET", "${CREATIVE_SDK_CLIENT_SECRET}")
+        manifestPlaceholders = [appPackageName: "${applicationId}"]
+
+        configurations.all {
+            resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.1'
+        }
+
+        if(rootProject.file('private.properties').exists()) {
+            def props = new Properties()
+            props.load(new FileInputStream(rootProject.file('private.properties')))
+            buildConfigField("String", "CREATIVE_SDK_CLIENT_ID", props['CREATIVE_SDK_CLIENT_ID'])
+            buildConfigField("String", "CREATIVE_SDK_CLIENT_SECRET", props['CREATIVE_SDK_CLIENT_SECRET'])
+        }
     }
     buildTypes {
         release {
@@ -18,6 +32,25 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    /* 2) Compile for Java 1.8 or greater */
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    /* 3) Exclude duplicate licenses */
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/DEPENDENCIES'
+        pickFirst 'AndroidManifest.xml'
+    }
+    dexOptions {
+        jumboMode true
+    }
+
 }
 
 dependencies {
@@ -25,10 +58,20 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.+'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile ("com.android.support:appcompat-v7:25.3.1") {
+        exclude group: 'com.android.support', module: 'cardview-v7'
+    }
+    //  compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    /* 4) Add the CSDK framework dependencies (Make sure these version numbers are correct) */
+    compile 'com.adobe.creativesdk.foundation:auth:0.9.1251'
+    compile 'com.adobe.creativesdk:image:4.8.4'
+    compile 'com.localytics.android:library:3.8.0'
+    compile ("org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version") {
+        exclude group: 'org.jetbrains', module: 'annotations'
+    }
+
 }
 repositories {
     mavenCentral()
