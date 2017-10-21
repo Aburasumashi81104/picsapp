@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MyCustomTheme">
+        <!-- 文字色の定義 -->
+        <attr name="myColor1" format="color"></attr>
+        <attr name="myText" format="string"></attr>
+        <attr name="myInt" format="integer"></attr>
+        <attr name="myRef" format="reference"></attr>
+    </declare-styleable>
+</resources>

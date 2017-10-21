@@ -10,7 +10,9 @@ import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.LinearLayout
 import com.adobe.creativesdk.aviary.AdobeImageIntent
+import com.example.moebutapworks.picsfixer.R.styleable.View
 
 
 class MainActivity : AppCompatActivity() {
@@ -26,8 +28,8 @@ class MainActivity : AppCompatActivity() {
 
         Log.d(TAG, "Slelect Theme!!")
         val theme: Button = findViewById(R.id.theme) as Button
-        theme.setOnClickListener { view ->
-            Log.d(TAG, "theme button is Clicked!")
+        theme.setOnClickListener{view ->
+            Log.d(TAG, "theme button is Clicked!!")
         }
 
         Log.d(TAG, "garrely button")
@@ -107,6 +109,7 @@ class MainActivity : AppCompatActivity() {
                 .build()
         startActivityForResult(imageEditorIntent, REQUEST_CODE_EDITOR)
     }
+
 
 }
 
