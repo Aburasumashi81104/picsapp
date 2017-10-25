@@ -2,16 +2,17 @@ package com.example.moebutapworks.picsfixer
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.LinearLayout
+import android.view.View
+import android.widget.*
 import com.adobe.creativesdk.aviary.AdobeImageIntent
+import com.example.moebutapworks.picsfixer.R.color.bbpink
+import com.example.moebutapworks.picsfixer.R.color.blue
 import com.example.moebutapworks.picsfixer.R.styleable.View
 
 
@@ -49,6 +50,9 @@ class MainActivity : AppCompatActivity() {
         photo.setOnClickListener {
             launchCamera()
         }
+
+        val layout = findViewById(R.id.mainlayout)
+        layout.setBackgroundColor(Color.BLUE)
 
     }
 
