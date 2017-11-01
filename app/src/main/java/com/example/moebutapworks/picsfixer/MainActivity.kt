@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     private var fileUri: Uri? = null
     private var editedFileUri: Uri? = null
     private val parentLayout: RelativeLayout by lazy{ findViewById(R.id.mainlayout) as RelativeLayout}
-    
+    private var popupMenu: PopupMenu? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,9 +31,10 @@ class MainActivity : AppCompatActivity() {
 
         Log.d(TAG, "Slelect Theme!!")
         val theme: Button = findViewById(R.id.theme) as Button
-        theme.setOnClickListener{
+        theme.setOnClickListener{ v ->
+
             //Log.d(TAG, "theme button is Clicked!!")
-            onClick()
+            showPopup(v)
         }
 
         Log.d(TAG, "garrely button")
@@ -67,11 +68,33 @@ class MainActivity : AppCompatActivity() {
         startActivityForResult(intent,REQUEST_CODE_GALLERY)
     }
 
-    private fun onClick(){
-        val toolbar = findViewById(R.id.home_toolbar)
-        toolbar.setBackgroundColor(Color.GREEN)
-        val background = findViewById(R.id.mainlayout)
-        background.setBackgroundColor(Color.GRAY)
+    private fun showPopup(view:View){
+
+
+        if (popupMenu == null){
+            popupMenu = PopupMenu (this, view)
+            popupMenu?.menuInflater?.inflate(R.menu.popup, popupMenu?.menu)
+        }
+
+        popupMenu?.setOnMenuItemClickListener { menu ->
+           when( menu.itemId){
+               R.id.mainlayout -> {
+                   //ボタン押された時の処理
+                   val toolbar = findViewById(R.id.home_toolbar)
+                   toolbar.setBackgroundColor(Color.GREEN)
+                   val background = findViewById(R.id.mainlayout)
+                   background.setBackgroundColor(Color.GRAY)
+               }
+               R.id.button ->{
+                   //他のボタン
+               }
+               else ->{
+                   //それ以外
+               }
+           }
+            return@setOnMenuItemClickListener true
+        }
+        popupMenu?.show()
     }
 
     companion object {

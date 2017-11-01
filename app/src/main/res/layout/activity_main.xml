@@ -10,7 +10,7 @@
     android:id="@+id/home_toolbar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:background="@color/b" />
+    android:background="@color/yellow" />
 
     <Button
         android:id="@+id/theme"
