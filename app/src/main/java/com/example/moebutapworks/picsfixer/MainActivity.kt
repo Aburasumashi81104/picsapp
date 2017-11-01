@@ -77,16 +77,18 @@ class MainActivity : AppCompatActivity() {
         }
 
         popupMenu?.setOnMenuItemClickListener { menu ->
+            val toolbar = findViewById(R.id.home_toolbar)
+            val background = findViewById(R.id.mainlayout)
            when( menu.itemId){
-               R.id.mainlayout -> {
+               R.id.GreenGray -> {
                    //ボタン押された時の処理
-                   val toolbar = findViewById(R.id.home_toolbar)
                    toolbar.setBackgroundColor(Color.GREEN)
-                   val background = findViewById(R.id.mainlayout)
                    background.setBackgroundColor(Color.GRAY)
                }
-               R.id.button ->{
+               R.id.DefaultTheme ->{
                    //他のボタン
+                   toolbar.setBackgroundColor(Color.YELLOW)
+                   background.setBackgroundColor(Color.BLUE)
                }
                else ->{
                    //それ以外
