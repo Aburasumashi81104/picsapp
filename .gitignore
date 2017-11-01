@@ -8,3 +8,10 @@
 /captures
 private.properties
 .externalNativeBuild
+/keystore.jks
+.idea/dictionaries/
+.idea/inspectionProfiles/
+app/app-release.apk
+app/libs/
+app/src/main/res/drawable/
+keystore.jks

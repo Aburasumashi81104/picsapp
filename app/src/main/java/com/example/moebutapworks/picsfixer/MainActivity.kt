@@ -29,8 +29,9 @@ class MainActivity : AppCompatActivity() {
 
         Log.d(TAG, "Slelect Theme!!")
         val theme: Button = findViewById(R.id.theme) as Button
-        theme.setOnClickListener{view ->
-            Log.d(TAG, "theme button is Clicked!!")
+        theme.setOnClickListener{
+            //Log.d(TAG, "theme button is Clicked!!")
+            onClick()
         }
 
         Log.d(TAG, "garrely button")
@@ -62,6 +63,13 @@ class MainActivity : AppCompatActivity() {
         intent.data =
                 android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI
         startActivityForResult(intent,REQUEST_CODE_GALLERY)
+    }
+
+    private fun onClick(){
+        val toolbar = findViewById(R.id.home_toolbar)
+        toolbar.setBackgroundColor(Color.GREEN)
+        val background = findViewById(R.id.background)
+        background.setBackgroundColor(Color.GRAY)
     }
 
     companion object {

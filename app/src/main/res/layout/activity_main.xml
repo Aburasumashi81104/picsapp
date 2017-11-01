@@ -9,13 +9,13 @@
 <android.support.v7.widget.Toolbar
     android:id="@+id/home_toolbar"
     android:layout_width="match_parent"
-    android:layout_height="48dp"
-    android:background="BLACK"/>
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/red" />
 
     <Button
         android:id="@+id/theme"
         android:text="THEME"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/home_toolbar"
         android:layout_alignParentLeft="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
