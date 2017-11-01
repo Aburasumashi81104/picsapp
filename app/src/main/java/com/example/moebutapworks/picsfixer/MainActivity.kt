@@ -7,9 +7,13 @@ import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.support.v7.widget.PopupMenu
+import android.support.v7.widget.Toolbar
 import android.util.Log
 import android.view.View
-import android.widget.*
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.RelativeLayout
 import com.adobe.creativesdk.aviary.AdobeImageIntent
 import com.example.moebutapworks.picsfixer.R.color.bbpink
 import com.example.moebutapworks.picsfixer.R.color.blue
@@ -57,6 +61,10 @@ class MainActivity : AppCompatActivity() {
 
         val layout = findViewById(R.id.mainlayout)
         layout.setBackgroundColor(Color.BLUE)
+
+        val toolbar = findViewById(R.id.home_toolbar) as Toolbar
+        toolbar.title = "Home"
+        toolbar.setTitleTextColor(Color.WHITE)
 
     }
 
@@ -141,6 +149,9 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri)
         startActivityForResult(intent, REQUEST_CODE_CAMERA)
     }
+
+
+
 
     private fun launchEditor(uri: Uri?) {
         val imageEditorIntent = AdobeImageIntent.Builder(this)
