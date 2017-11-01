@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     private var fileUri: Uri? = null
     private var editedFileUri: Uri? = null
     private val parentLayout: RelativeLayout by lazy{ findViewById(R.id.mainlayout) as RelativeLayout}
-
+    
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
