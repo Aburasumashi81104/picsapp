@@ -22,6 +22,8 @@ class MainActivity : AppCompatActivity() {
     private var image: ImageView? =null
     private var fileUri: Uri? = null
     private var editedFileUri: Uri? = null
+    private val parentLayout: RelativeLayout by lazy{ findViewById(R.id.mainlayout) as RelativeLayout}
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,7 +70,7 @@ class MainActivity : AppCompatActivity() {
     private fun onClick(){
         val toolbar = findViewById(R.id.home_toolbar)
         toolbar.setBackgroundColor(Color.GREEN)
-        val background = findViewById(R.id.background)
+        val background = findViewById(R.id.mainlayout)
         background.setBackgroundColor(Color.GRAY)
     }
 
