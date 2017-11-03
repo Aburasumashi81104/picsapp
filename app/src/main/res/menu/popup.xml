@@ -1,5 +1,5 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/DefaultTheme" android:title="DEFAULT"></item>
-    <item android:id="@+id/GreenGray" android:title="GREEN/GRAY"></item>
+    <item android:id="@+id/GreenGray" android:title="PINK/GRAY"></item>
     <item android:id="@+id/item03" android:title="item03"></item>
 </menu>

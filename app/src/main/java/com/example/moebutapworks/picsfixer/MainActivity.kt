@@ -36,7 +36,6 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "Slelect Theme!!")
         val theme: Button = findViewById(R.id.theme) as Button
         theme.setOnClickListener{ v ->
-
             //Log.d(TAG, "theme button is Clicked!!")
             showPopup(v)
         }
@@ -90,7 +89,7 @@ class MainActivity : AppCompatActivity() {
            when( menu.itemId){
                R.id.GreenGray -> {
                    //ボタン押された時の処理
-                   toolbar.setBackgroundColor(Color.GREEN)
+                   toolbar.setBackgroundColor(getResources().getColor(bbpink))
                    background.setBackgroundColor(Color.GRAY)
                }
                R.id.DefaultTheme ->{
