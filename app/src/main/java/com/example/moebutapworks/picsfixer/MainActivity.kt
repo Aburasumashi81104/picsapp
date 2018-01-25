@@ -46,11 +46,7 @@ class MainActivity : AppCompatActivity() {
             launchGallery()
         }
 
-        Log.d(TAG, "joint button")
-        val joint: Button = findViewById(R.id.joint) as Button
-        joint.setOnClickListener {
-            newSampleActivity()
-        }
+
 
         Log.d(TAG, "photo button")
         val photo: Button = findViewById(R.id.photobutton) as Button
@@ -87,16 +83,25 @@ class MainActivity : AppCompatActivity() {
             val toolbar = findViewById(R.id.home_toolbar)
             val background = findViewById(R.id.mainlayout)
            when( menu.itemId){
-               R.id.GreenGray -> {
+
+               R.id.theme01 ->{
+                   //ボタン押された時の処理
+                   toolbar.setBackgroundColor(Color.RED)
+                   background.setBackgroundColor(Color.BLACK)
+               }
+
+               R.id.theme02 -> {
                    //ボタン押された時の処理
                    toolbar.setBackgroundColor(getResources().getColor(bbpink))
                    background.setBackgroundColor(Color.GRAY)
                }
-               R.id.DefaultTheme ->{
-                   //他のボタン
-                   toolbar.setBackgroundColor(Color.YELLOW)
-                   background.setBackgroundColor(Color.BLUE)
+
+               R.id.theme03 ->{
+                   //ボタン押された時の処理
+                   toolbar.setBackgroundColor(Color.BLACK)
+                   background.setBackgroundColor(Color.WHITE)
                }
+
                else ->{
                    //それ以外
                }
